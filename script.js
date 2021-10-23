@@ -10,19 +10,50 @@
 
 //0,1,2,3,4,5,6,7,8,9,
 
+const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lower = "abcdefghijklmnopqrstuvwxyz";
+const special = "!@#$%^&*()-=+_{}";
+const numbers = "0123456789";
+
 //generate password
 function generatePassword() {
-const totalLength = prompt('How many characters would you like to use?');
-if(totalLength >= 8 && totalLength <= 128){
-  alert(`Your new password will be ${totalLength} characters long.`);
-}
-let upper = confirm("Would you like to include upper case letters?");
-let lower = confirm("Would you like to include lower case letters?");
-let symbols = confirm("Would you like to include special characters?");
-let numbers = confirm("Would you like to include numbers?");
-}
+const passwordLength = prompt('How many characters would you like to use?');
+
+if(passwordLength >= 8 && passwordLength <= 128){
+  alert(`Your new password will be ${passwordLength} characters long.`);
+ console.log(passwordLength)
+} else {
+  alert("Your password must be between 8 - 128 characters long")
+} 
 
 
+
+
+  let upper = confirm("Would you like to choose upper case letters?");
+  let lower = confirm("Would you like to choose lower case letters?");
+  let special = confirm("Would you like to choose special characters?");
+  let numbers =confirm("Would you like to use numbers?");
+
+  let allCharacters = '';
+  let password = '';
+
+  if(upper){
+  allCharacters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  }
+  if(lower){
+    allCharacters += 'abcdefghijklmnopqrstuvwxyz';
+  }
+  if(special){
+    allCharacters += '!@#$%^&*()-=+_{}';
+  }
+  if(numbers){
+    allCharacters += '0123456789';
+  }
+
+
+}
+
+//}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -40,4 +71,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
