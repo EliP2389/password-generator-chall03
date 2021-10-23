@@ -16,6 +16,10 @@ const totalLength = prompt('How many characters would you like to use?');
 if(totalLength >= 8 && totalLength <= 128){
   alert(`Your new password will be ${totalLength} characters long.`);
 }
+let upper = confirm("Would you like to include upper case letters?");
+let lower = confirm("Would you like to include lower case letters?");
+let symbols = confirm("Would you like to include special characters?");
+let numbers = confirm("Would you like to include numbers?");
 }
 
 
