@@ -1,3 +1,58 @@
+
+function printHello() {
+    console.log('Hello world!')
+}
+
+
+// first: iterator initialization
+// second: conditonal statement --> true or false
+// third: iterator modifier --> always executes at the end of every loop
+// i++ ---> i = i + 1
+// example: i = 0
+// i++ ---> i = 0 + 1 ---> i = 1
+
+function myFunction () {
+    for (var i = 0; i < 3; i++) {
+        console.log('hi!')
+     }
+}
+
+
+ // 1st loop
+ // i = 0;
+ // i < 3
+ // 0 < 3 --> true
+ // ---> 'Hi!'
+ // i++ --> add 1 to i
+ // i = 1;
+
+// 2nd loop
+// i = 1
+// i < 3
+// 1 < 3 ---> true
+// --> 'Hi!'
+// i++ ---> i = 2
+
+// 3rd loop
+// i = 2;
+// 2 < 3 ---> true
+// ---> 'Hi!'
+// i++ ---> i = 3;
+
+// 4th loop
+// i = 3
+// i < 3
+// 3 < 3 ---> false
+// NO MORE LOOP
+
+
+// FUNCTION CALL
+printHello();
+myFunction()
+
+
+
+
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*-=+_<>{}[];,./?';
 
 //generate password
@@ -26,10 +81,33 @@ function generatePassword() {
 
   for (var i = 0; i < passwordLength; i++) {
     var randomChar = Math.floor(Math.random() * characters.length);
-    pass += characters.charAt(randomChar)
+    // Math.floor(5.7) ---> 5
+    // Math.floor(10.312312) ---> 10
 
+    // Math.random() ---> random number between 0 to 1
+    // 0.2354234167
+    // 0.97264527364527
+    // 0.0
+
+    // 0.2354234167 * 52 ---> 12.242
+    // Math.floor(12.242) ---> 12
+    // var randomChar = 12
+
+    // pass += characters.substring(randomChar, randomChar + 1);
+    pass += characters.charAt(randomChar)
+    // characters.charAt(12)
+    // ---> M
+    // pass = "" + 'M'
+    // pass = "M"\
+
+    // pass = pass + "B"
+    // pass = "M" + "B"
+    // pass = "MB"
+
+    // ...
   }
 
+  // pass = "MB1jk23R"
 
   return pass;
 
