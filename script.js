@@ -29,31 +29,14 @@ if(passwordLength >= 8 && passwordLength <= 128){
 
 
 
-  let upper = confirm("Would you like to choose upper case letters?");
-  let lower = confirm("Would you like to choose lower case letters?");
-  let special = confirm("Would you like to choose special characters?");
-  let numbers =confirm("Would you like to use numbers?");
+//function to generate random
+var randomPassword = function(min, max){
+  var value = Math.floor(Math.random() * (max - min + 1) + min)
 
-  let allCharacters = '';
-  let password = '';
-
-  if(upper){
-  allCharacters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  }
-  if(lower){
-    allCharacters += 'abcdefghijklmnopqrstuvwxyz';
-  }
-  if(special){
-    allCharacters += '!@#$%^&*()-=+_{}';
-  }
-  if(numbers){
-    allCharacters += '0123456789';
-  }
-
+  return value;
+};
 
 }
-
-//}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
